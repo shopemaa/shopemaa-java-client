@@ -2,7 +2,7 @@
 
 # Shopemaa Java Client
 
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/shopemaa/shopemaa-java-client)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/shopemaa/shopemaa-java-client?display_name=tag&label=current%20version)
 
 Java library to use shopemaa features in your jvm based projects.
 
