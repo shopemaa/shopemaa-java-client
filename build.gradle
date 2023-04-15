@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+plugins {
+    id 'java'
+    id 'com.apollographql.apollo3' version '3.8.0'
+}
+
+group 'com.shopemaa.client'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    testImplementation group: 'org.awaitility', name: 'awaitility', version: '4.2.0'
+    testImplementation group: 'org.awaitility', name: 'awaitility-proxy', version: '3.1.6'
+
+    implementation('com.apollographql.apollo3:apollo-runtime:3.8.0')
+    implementation("com.apollographql.apollo3:apollo-rx2-support:3.8.0")
+}
+
+test {
+    useJUnitPlatform()
+}
+
+apollo {
+    service("shopemaa") {
+        packageName.set("com.shopemaa.client.graphql")
+    }
+}
