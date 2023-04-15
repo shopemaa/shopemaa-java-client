@@ -2,9 +2,9 @@
 
 # Shopemaa Java Client
 
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/shopemaa/shopemaa-java-client?display_name=tag&label=current%20version)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/shopemaa/shopemaa-java-client?label=current-version)
 
-Java library to use shopemaa features in your jvm based projects.
+Java library to use Shopemaa features in your jvm based projects.
 
 ### Installation
 
@@ -16,7 +16,7 @@ Java library to use shopemaa features in your jvm based projects.
 <distributionManagement>
    <repository>
      <id>github</id>
-     <name>GitHub OWNER Apache Maven Packages</name>
+     <name>GitHub Shopemaa Apache Maven Packages</name>
      <url>https://maven.pkg.github.com/shopemaa/shopemaa-java-client</url>
    </repository>
 </distributionManagement>
@@ -28,7 +28,7 @@ Java library to use shopemaa features in your jvm based projects.
 <dependency>
   <groupId>com.shopemaa.client</groupId>
   <artifactId>shopemaa-java-client</artifactId>
-  <version>{version}</version>
+  <version>{current-version}</version>
 </dependency>
 ```
 
@@ -48,7 +48,7 @@ repositories {
 
 ```groovy
 dependencies {
-    implementation 'com.shopemaa.client:shopemaa-java-client:{version}'
+    implementation 'com.shopemaa.client:shopemaa-java-client:{current-version}'
 }
 ```
 
