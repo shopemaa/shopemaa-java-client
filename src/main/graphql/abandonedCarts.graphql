@@ -1,42 +1,32 @@
-query Cart($id: String!){
-    cart(cartId: $id) {
+query abandonedCarts($pagination: Pagination!) {
+    abandonedCarts(pagination: $pagination) {
         id
         isShippingRequired
         cartItems {
             id
+            purchasePrice
+            purchaseTimeCost
+            quantity
             product {
                 id
-                name
                 slug
                 description
-                sku
+                name
                 price
-                stock
-                images
-                fullImages
-                isDigitalProduct
                 productSpecificDiscount
-                views
                 productUnit
-                createdAt
-                updatedAt
-                attributes {
-                    id
-                    name
-                    values
-                    isRequired
-                }
+                isDigitalProduct
+                isPublished
             }
-            quantity
-            purchasePrice
             attributes {
                 name
                 selectedValue
             }
             variation {
-                id
                 name
                 price
+                id
+                cost
                 sku
                 stock
             }

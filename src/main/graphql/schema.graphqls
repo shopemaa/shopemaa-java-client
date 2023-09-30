@@ -168,6 +168,11 @@ type BlogPostComment {
   updatedAt: String
 }
 
+"""
+The `Boolean` scalar type represents `true` or `false`.
+"""
+scalar Boolean
+
 type Cart {
   id: String!
 
@@ -338,6 +343,8 @@ enum Currency {
   BDT
 
   EUR
+
+  SEK
 }
 
 type Customer {
@@ -384,6 +391,8 @@ type DigitalContent {
   contentText: String
 
   contentUrl: String
+
+  streamUrl: String
 
   updatedAt: String!
 
@@ -443,6 +452,11 @@ input FilterQuery {
 
   value: String!
 }
+
+"""
+The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point).
+"""
+scalar Float
 
 type GeneratePaymentNoneResponse {
   PaymentGatewayName: String!
@@ -533,6 +547,16 @@ input GuestCheckoutPlaceOrderParams {
 
   note: String
 }
+
+"""
+The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as "4") or integer (such as 4) input value will be accepted as an ID.
+"""
+scalar ID
+
+"""
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+"""
+scalar Int
 
 type IsDigitalProductPurchasedByCustomerResp {
   isPurchased: Boolean!
@@ -1016,6 +1040,8 @@ input NewStoreParams {
   postcode: String
 
   locationID: String
+
+  storeFooterScripts: String
 }
 
 input NewStoreSecretParams {
@@ -1408,6 +1434,8 @@ type PStore {
   postcode: String
 
   location: Location
+
+  storeFooterScripts: String
 }
 
 type PStoreBanner {
@@ -2210,6 +2238,8 @@ type Store {
   postcode: String
 
   location: Location
+
+  storeFooterScripts: String
 }
 
 type StoreBanner {
@@ -2279,6 +2309,11 @@ type StoreSecret {
 
   secretType: SecretType!
 }
+
+"""
+The `String`scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+"""
+scalar String
 
 type Subscription {
   productCreated: Product!
@@ -2590,6 +2625,8 @@ input UpdateStoreParams {
   postcode: String
 
   locationID: String
+
+  storeFooterScripts: String
 }
 
 input UpdateVariationParams {
@@ -2624,6 +2661,8 @@ type User {
   createdAt: String!
 
   updatedAt: String
+
+  location: Location
 }
 
 type UserCouponCode {
@@ -2665,6 +2704,39 @@ enum UserStatus {
 enum WeightUnit {
   Gram
 }
+
+"""
+The @deprecated directive is used within the type system definition language to indicate deprecated portions of a GraphQL service’s schema, such as deprecated fields on a type or deprecated enum values.
+"""
+directive @deprecated ("" reason: String = "No longer supported") on FIELD_DEFINITION|ENUM_VALUE|ARGUMENT_DEFINITION|INPUT_FIELD_DEFINITION
+
+"""
+The @include directive may be provided for fields, fragment spreads, and inline fragments, and allows for conditional inclusion during execution as described by the if argument.
+"""
+directive @include ("" if: Boolean!) on FIELD|FRAGMENT_SPREAD|INLINE_FRAGMENT
+
+directive @injectCustomer on FIELD_DEFINITION
+
+directive @injectPlatformSettings on FIELD_DEFINITION
+
+directive @injectShop on FIELD_DEFINITION
+
+directive @injectShopBySecret on FIELD_DEFINITION
+
+directive @injectUser on FIELD_DEFINITION
+
+directive @isAdminSecret on FIELD_DEFINITION
+
+directive @isAppSecret on FIELD_DEFINITION
+
+directive @isAuthorized on FIELD_DEFINITION
+
+directive @isCustomerAuthorized on FIELD_DEFINITION
+
+"""
+The @skip directive may be provided for fields, fragment spreads, and inline fragments, and allows for conditional exclusion during execution as described by the if argument.
+"""
+directive @skip ("" if: Boolean!) on FIELD|FRAGMENT_SPREAD|INLINE_FRAGMENT
 
 schema {
   query: Query

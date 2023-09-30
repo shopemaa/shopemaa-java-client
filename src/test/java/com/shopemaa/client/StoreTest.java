@@ -4,10 +4,10 @@ import com.apollographql.apollo3.ApolloCall;
 import com.apollographql.apollo3.ApolloClient;
 import com.apollographql.apollo3.api.ApolloResponse;
 import com.apollographql.apollo3.rx2.Rx2Apollo;
-import com.shopemaa.client.graphql.StoreBySecretQuery;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.shopemaa.client.graphql.StoreBySecretQuery;
 import org.junit.jupiter.api.Test;
 
 public class StoreTest extends BaseTest {
